@@ -1,33 +1,35 @@
 # Calculo de areas
 
-PI = 3.141592
+# Constante para almacenar PI
+PI: float = 3.141592
 
 # Area del cuadrado
 def acuadrado():
-    lado = int(input('\n¿Cual es el valor del lado? '))
-    x = lado**2
-    print('El area del cuadrado es ' + str(x) + ' unidades cuadradas')
+    lado: float = float(input('\n¿Cual es el valor del lado? '))
+    x: float = lado ** 2 # Multiplicación exponencial, multiplicarse por si mismo, X veces
+
+    print('El area del cuadrado es {:.2f} unidades cuadradas'.format(x))
 
 # Area del triangulo
 def atriangulo():
-    base = int(input('\n¿Cual es el valor de la base? '))
-    altura = int(input('¿Cual es el valor de la altura? '))
-    x = (base * altura) / 2
+    base: float = float(input('\n¿Cual es el valor de la base? '))
+    altura: float = float(input('¿Cual es el valor de la altura? '))
+    x: float = (base * altura) / 2
 
-    print('El area del triangulo es ' + str(x) + ' unidades cuadradas')
+    print('El area del triangulo es {:.2f} unidades cuadradas'.format(x))
 
 # Area del circulo
 def acirculo():
-    radio = int(input('\n¿Cual es el valor del radio? '))
-    x = (PI * radio) ** 2
+    radio: float = float(input('\n¿Cual es el valor del radio? '))
+    x: float = PI * (radio ** 2)
 
-    print('El area del circulo es ' + str(x) + ' unidades cuadradas')
+    print('El area del circulo es {:.2f} unidades cuadradas'.format(x))
 
 
-repetir = True
+repetir: bool = True
 
 while repetir == True:
-    area = int(input('Elige la figura geometrica para calcular su area:\nCuadrado = 1\nTriangulo = 2\nCirculo = 3\n'))
+    area: int = int(input('Elige la figura geometrica para calcular su area:\nCuadrado = 1\nTriangulo = 2\nCirculo = 3\n'))
 
     if(area == 1):
         acuadrado()
@@ -36,11 +38,12 @@ while repetir == True:
     elif(area == 3):
         acirculo()
     else:
-        print('Ingresa una opciòn valida')
+        print('Ingresa una opción valida')
     
-    respuesta = input('\n¿Quieres calcular el area de otra figura? ')
+    respuesta: str = input('\n¿Quieres calcular el area de otra figura? ').lower()
 
-    if(respuesta.lower() == 'si'):
+    # Si la respuesta es si
+    if(respuesta == 'si' or respuesta == 'sí'):
         repetir = True
     else:
         repetir = False

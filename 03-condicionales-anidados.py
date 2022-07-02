@@ -1,5 +1,5 @@
 # Variable para almacenar respuesta de input
-respuesta = input('Trabajas desde casa? ')
+respuesta: str = input('Trabajas desde casa? ')
 
 # Si la respuesta es si
 if respuesta.lower() == 'si':
@@ -8,7 +8,7 @@ else:
     print('Trabajas fuera de casa')
 
     # Variable para almacenar respuesta de input
-    tiempo = int(input('¿Cuantos minutos haces al trabajo? '))
+    tiempo: int = int(input('¿Cuantos minutos haces al trabajo? '))
 
     if tiempo <= 0:
         print('Trabajas desde casa')

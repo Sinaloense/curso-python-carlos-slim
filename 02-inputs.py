@@ -1,5 +1,5 @@
 # Variable para almacenar respuesta de input
-libros = int(input('¿Cuantos libros lees anualmente? '))
+libros: int = int(input('¿Cuantos libros lees anualmente? '))
 
 # Si lee 15 o más libros
 if libros >= 15:

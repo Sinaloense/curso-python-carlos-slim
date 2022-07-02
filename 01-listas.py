@@ -1,5 +1,5 @@
 # Definir variable para almacenar cadena
-cadena = ''
+cadena: str = ''
 
 # Ciclo para almacenar valores en la cadena
 for j in range(0, 10):

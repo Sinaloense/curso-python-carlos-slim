@@ -1,6 +1,8 @@
 from abc import ABC, abstractmethod
 
+# Clase
 class Persona(ABC):
+     # Constructor y atributos
      def __init__(self, edad, nombre):
           self.edad = edad
           self.nombre = nombre
