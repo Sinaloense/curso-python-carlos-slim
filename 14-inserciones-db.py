@@ -1,35 +1,58 @@
 import sqlite3
 
 def insertar():
-    db1 = sqlite3.connect('novelas.db')
     print('\nEstas en la función insertar')
 
+    # Obtener datos
     nombre1 = input('Escribe el titulo de la novela: ')
     autor1 = input('\nEscribe el autor de la novela: ')
     year1 = str(input('\nDigita el año de la novela: '))
 
+    # Conectarse a la base de datos
+    db1 = sqlite3.connect('db/novelas.db')
+
+    # Abrir conexion a la base de datos
     consulta = db1.cursor()
 
+    # Consulta
     strConsulta = 'INSERT INTO tabla(nombre, autor, year) '\
         'VALUES("' + nombre1 + '", "' + autor1 + '", "' + year1 + '")'
     print('\n' + strConsulta)
 
+    # Ejecutar consulta
     consulta.execute(strConsulta)
+
+    # Cerrar consulta
     consulta.close()
+
+    # Guardar cambios
     db1.commit()
+    
+    # Cerrar conexión
     db1.close()
 
 def consultar():
-    db2 = sqlite3.connect('novelas.db')
     print('\nEstas en la función consultar')
 
+    # Conectarse a la base de datos
+    db2 = sqlite3.connect('db/novelas.db')
+
+    # Preparar consulta
     db2.row_factory = sqlite3.Row
+
+    # Abrir conexion a la base de datos
     consulta = db2.cursor()
+
+    # Ejecutar consulta
     consulta.execute('SELECT * FROM tabla')
 
+    # Almacenar resultado de la consulta
     filas = consulta.fetchall()
+
+    # Variable para almacenar resultados de la consulta
     lista = []
 
+    # Ciclo para recorrer las filas
     for fila in filas:
         s = {}
         s['nombre'] = fila['nombre']
@@ -37,7 +60,10 @@ def consultar():
         s['year'] = str(fila['year'])
         lista.append(s)
     
+    # Cerrar consulta
     consulta.close()
+
+    # Cerrar conexión
     db2.close()
 
     return(lista)

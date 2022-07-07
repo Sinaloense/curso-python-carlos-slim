@@ -10,8 +10,10 @@ class Interfaz:
         self.e2.pack(side = RIGHT)
         self.e3.pack(side = BOTTOM, fill = X)
 
+# Instancia TK (Ventana)
 ventana = Tk()
 
+# Agregar contenido a la ventana
 miInterfaz = Interfaz(ventana)
 
 # Ciclo infinito que permite al programa monitoriar las acciones en la ventana

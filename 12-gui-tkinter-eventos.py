@@ -23,8 +23,10 @@ class Interfaz:
         far = (cel * 1.8) + 32
         self.textoE3.set(far)
 
-# Crear ventana
+# Instancia TK (Ventana)
 ventana = Tk()
+
+# Agregar contenido a la ventana
 miInterfaz = Interfaz(ventana)
 
 # Ciclo infinito que permite al programa monitoriar las acciones en la ventana

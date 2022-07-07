@@ -1,6 +1,11 @@
+import os
 import sqlite3
 
-conexion = sqlite3.connect('novelas.db')
+# Si no existe la carpeta, la crea
+if not os.path.exists('db'):
+    os.mkdir('db')
+
+conexion = sqlite3.connect('db/novelas.db')
 consulta = conexion.cursor()
 tabla = 'CREATE TABLE tabla('\
     'id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,'\
@@ -15,6 +20,11 @@ if(consulta.execute(tabla)):
 else:
     print('la tabla no fue creada')
 
+# Cerrar consulta
 consulta.close()
+
+# Guardar cambios
 conexion.commit()
+
+# Cerrar conexión
 conexion.close()

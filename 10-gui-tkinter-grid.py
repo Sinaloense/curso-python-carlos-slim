@@ -17,8 +17,10 @@ class Interfaz:
         self.e6.grid(column = 1, row = 2)
 
 
+# Instancia TK (Ventana)
 ventana = Tk()
 
+# Agregar contenido a la ventana
 miInterfaz = Interfaz(ventana)
 
 # Ciclo infinito que permite al programa monitoriar las acciones en la ventana
